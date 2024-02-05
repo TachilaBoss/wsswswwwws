@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<div id="elem" style="border: 2px solid black; padding: 10px; height: 200px; overflow: auto;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel ex eu quam interdum tincidunt. Sed hendrerit, nisl nec vehicula blandit, elit tellus consectetur purus, vel venenatis velit enim id est.</p>
+</div>
+
+<button onclick="getElementDimensions()">Получить размер элемента</button>
+<button onclick="getScrollTop()">Показать верхнюю прокрутку</button>
+<button onclick="getScrollLeft()">Показать левую прокрутку</button>
+<button onclick="scrollToPosition()">Прокрутить до 100px сверху</button>
+<button onclick="scrollByDown()">Прокрутить на 100px вниз</button>
+
+<script>
+  function getElementDimensions() {
+    var elem = document.getElementById('elem');
+    var styles = getComputedStyle(elem);
+    var elementWidth = elem.clientWidth - parseFloat(styles.borderLeftWidth) - parseFloat(styles.borderRightWidth);
+    var elementHeight = elem.clientHeight - parseFloat(styles.borderTopWidth) - parseFloat(styles.borderBottomWidth);
+    alert('Ширина элемента: ' + elementWidth + 'px\nВысота элемента: ' + elementHeight + 'px');
+  }
+
+  function getScrollTop() {
+    var elem = document.getElementById('elem');
+    var scrollTop = elem.scrollTop;
+    alert('Верхняя прокрутка элемента: ' + scrollTop + 'px');
+  }
+
+  function getScrollLeft() {
+    var elem = document.getElementById('elem');
+    var scrollLeft = elem.scrollLeft;
+    alert('Левая прокрутка элемента: ' + scrollLeft + 'px');
+  }
+
+  function scrollToPosition() {
+    var elem = document.getElementById('elem');
+    elem.scrollTop = 100;
+  }
+
+  function scrollByDown() {
+    var elem = document.getElementById('elem');
+    elem.scrollTop += 100;
+  }
+</script>
+
+</body>
+</html>

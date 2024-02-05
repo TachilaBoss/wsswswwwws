@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<div id="elem">Текст в элементе</div>
+
+<script>
+  // Вставка перед элементом
+  document.getElementById('elem').insertAdjacentHTML('beforebegin', '<span style="color: red;">!!!</span>');
+
+  // Вставка после элемента
+  document.getElementById('elem').insertAdjacentHTML('afterend', '<span style="color: blue;">!!!</span>');
+
+  // Вставка в начало элемента
+  document.getElementById('elem').insertAdjacentHTML('afterbegin', '<span style="color: green;">!!!</span>');
+
+  // Вставка в конец элемента
+  document.getElementById('elem').insertAdjacentHTML('beforeend', '<span style="color: orange;">!!!</span>');
+</script>
+
+</body>
+</html>

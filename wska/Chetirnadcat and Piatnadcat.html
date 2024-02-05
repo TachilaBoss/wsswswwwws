@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<div id="elem" style="border: 2px solid black; padding: 10px; height: 200px; overflow: auto;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel ex eu quam interdum tincidunt. Sed hendrerit, nisl nec vehicula blandit, elit tellus consectetur purus, vel venenatis velit enim id est.</p>
+</div>
+
+<button onclick="getRealElementHeight()">Показать реальную высоту элемента</button>
+<button onclick="getRealElementWidth()">Показать реальную ширину элемента</button>
+<button onclick="scrollToBottom()">Прокрутить до 100px от нижнего края</button>
+
+<button onclick="getVerticalScrollPosition()">Показать вертикальную прокрутку страницы</button>
+<button onclick="getHorizontalScrollPosition()">Показать горизонтальную прокрутку страницы</button>
+
+<script>
+  function getRealElementHeight() {
+    var elem = document.getElementById('elem');
+    alert('Реальная высота элемента с учетом прокрутки: ' + elem.scrollHeight + 'px');
+  }
+
+  function getRealElementWidth() {
+    var elem = document.getElementById('elem');
+    alert('Реальная ширина элемента с учетом прокрутки: ' + elem.scrollWidth + 'px');
+  }
+
+  function scrollToBottom() {
+    var elem = document.getElementById('elem');
+    elem.scrollTop = elem.scrollHeight - elem.clientHeight - 100;
+  }
+
+  function getVerticalScrollPosition() {
+    alert('Вертикальная прокрутка страницы: ' + window.pageYOffset + 'px');
+  }
+
+  function getHorizontalScrollPosition() {
+    alert('Горизонтальная прокрутка страницы: ' + window.pageXOffset + 'px');
+  }
+</script>
+
+</body>
+</html>

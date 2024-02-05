@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление восклицательного знака</title>
+</head>
+<body>
+
+<div id="elem">Этот элемент</div>
+<div>Сосед сверху</div>
+<div>Сосед снизу</div>
+<div>Сосед снизу его сосед</div>
+
+<script>
+    // Добавление восклицательного знака соседу сверху
+    var elem = document.querySelector('#elem');
+    var prevSibling = elem.previousElementSibling;
+
+    if (prevSibling) {
+        prevSibling.textContent += '!';
+    }
+
+    // Добавление восклицательного знака соседу снизу
+    var nextSibling = elem.nextElementSibling;
+
+    if (nextSibling) {
+        nextSibling.textContent += '!';
+    }
+
+    // Добавление восклицательного знака соседу снизу его соседа снизу
+    var secondNextSibling = nextSibling && nextSibling.nextElementSibling;
+
+    if (secondNextSibling) {
+        secondNextSibling.textContent += '!';
+    }
+</script>
+
+</body>
+</html>

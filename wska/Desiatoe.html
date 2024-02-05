@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<div id="elem" style="border: 2px solid black; padding: 10px;">
+  <p>Это ваш элемент!</p>
+</div>
+
+<button onclick="showElementWidth()">Показать полную ширину</button>
+<button onclick="showElementHeight()">Показать полную высоту</button>
+
+<script>
+  function showElementWidth() {
+    // Найти элемент #elem
+    var elem = document.getElementById('elem');
+
+    // Получить полную ширину элемента и вывести на экран
+    var elementWidth = elem.offsetWidth;
+    alert('Полная ширина элемента: ' + elementWidth + 'px');
+  }
+
+  function showElementHeight() {
+    // Найти элемент #elem
+    var elem = document.getElementById('elem');
+
+    // Получить полную высоту элемента и вывести на экран
+    var elementHeight = elem.offsetHeight;
+    alert('Полная высота элемента: ' + elementHeight + 'px');
+  }
+</script>
+
+</body>
+</html>

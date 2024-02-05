@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<button onclick="scrollToPosition()">Прокрутить в точку (300px, 500px)</button>
+<button onclick="scrollDown()">Прокрутить вниз на 300px</button>
+
+<button onclick="scrollToBottom()">Прокрутить вниз до самого низа</button>
+<button onclick="scrollByAmount()">Прокрутить на 400px вниз</button>
+<button onclick="checkScrollAndScroll()">Проверить и прокрутить</button>
+
+<div id="elem" style="width: 100px; height: 100px; background-color: lightblue;" onclick="increaseSize()">Нажмите для увеличения</div>
+
+<script>
+  function scrollToPosition() {
+    window.scrollTo(300, 500);
+  }
+
+  function scrollDown() {
+    window.scrollBy(0, 300);
+  }
+
+  function scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  function scrollByAmount() {
+    window.scrollBy(0, 400);
+  }
+
+  function checkScrollAndScroll() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      window.scrollTo(0, 100);
+    }
+  }
+
+  function increaseSize() {
+    var elem = document.getElementById('elem');
+    elem.style.width = (parseFloat(elem.style.width) * 2) + 'px';
+    elem.style.height = (parseFloat(elem.style.height) * 2) + 'px';
+  }
+</script>
+
+</body>
+</html>

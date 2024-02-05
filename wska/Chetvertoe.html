@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 20px;
+    }
+
+    ol, ul {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 5px 0;
+      padding: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+    }
+
+    li:hover {
+      background-color: #d0d0d0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Ordered List (ol)</h2>
+  <ol id="orderedList"></ol>
+
+  <h2>Unordered List (ul)</h2>
+  <ul id="unorderedList"></ul>
+
+  <script>
+    var ol = document.getElementById('orderedList');
+    var liOl = document.createElement('li');
+    liOl.textContent = 'пункт';
+    ol.appendChild(liOl);
+
+    var ul = document.getElementById('unorderedList');
+    var array = ['элемент1', 'элемент2', 'элемент3'];
+
+    array.forEach(function(item) {
+      var liUl = document.createElement('li');
+      liUl.textContent = item;
+      ul.appendChild(liUl);
+    });
+  </script>
+
+</body>
+</html>

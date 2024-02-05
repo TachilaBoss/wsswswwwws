@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<div id="elem" style="border: 2px solid black; padding: 10px;">
+  <p>Это ваш элемент!</p>
+</div>
+
+<button onclick="showTopBorderThickness()">Показать толщину верхней границы</button>
+<button onclick="showLeftBorderThickness()">Показать толщину левой границы</button>
+
+<script>
+  function showTopBorderThickness() {
+    // Найти элемент #elem
+    var elem = document.getElementById('elem');
+
+    // Получить толщину верхней границы и вывести на экран
+    var topBorderThickness = elem.clientTop;
+    alert('Толщина верхней границы: ' + topBorderThickness + 'px');
+  }
+
+  function showLeftBorderThickness() {
+    // Найти элемент #elem
+    var elem = document.getElementById('elem');
+
+    // Получить толщину левой границы и вывести на экран
+    var leftBorderThickness = elem.clientLeft;
+    alert('Толщина левой границы: ' + leftBorderThickness + 'px');
+  }
+</script>
+
+</body>
+</html>

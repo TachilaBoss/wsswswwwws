@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<!-- Задача 1 -->
+<div id="parent">
+  <div id="child">Элемент, который нужно удалить</div>
+</div>
+<button onclick="removeChildElement()">Удалить #child</button>
+
+<hr>
+
+<!-- Задача 2 -->
+<ol>
+  <li>Первый элемент</li>
+  <li>Второй элемент</li>
+  <li>Третий элемент</li>
+</ol>
+<button onclick="removeLastChild()">Удалить последний элемент ol</button>
+
+<hr>
+
+<!-- Задача 3 -->
+<div id="elementToRemove" onclick="removeElement()">Нажмите, чтобы удалить меня</div>
+
+<hr>
+
+<!-- Задача 4 -->
+<ol onclick="removeLi(event)">
+  <li>Первый элемент</li>
+  <li>Второй элемент</li>
+  <li>Третий элемент</li>
+</ol>
+
+<hr>
+
+<!-- Задача 5 -->
+<input type="text" id="inputToClone">
+<button onclick="cloneInput()">Клонировать инпут</button>
+
+<script>
+  // Задача 1
+  function removeChildElement() {
+    var parent = document.getElementById('parent');
+    var child = document.getElementById('child');
+    parent.removeChild(child);
+  }
+
+  // Задача 2
+  function removeLastChild() {
+    var ol = document.querySelector('ol');
+    var lastChild = ol.lastElementChild;
+    ol.removeChild(lastChild);
+  }
+
+  // Задача 3
+  function removeElement() {
+    var element = document.getElementById('elementToRemove');
+    element.parentNode.removeChild(element);
+  }
+
+  // Задача 4
+  function removeLi(event) {
+    if (event.target.tagName === 'LI') {
+      event.target.parentNode.removeChild(event.target);
+    }
+  }
+
+  // Задача 5
+  function cloneInput() {
+    var originalInput = document.getElementById('inputToClone');
+    var clonedInput = originalInput.cloneNode(true);
+    document.body.appendChild(clonedInput);
+  }
+</script>
+
+</body>
+</html>

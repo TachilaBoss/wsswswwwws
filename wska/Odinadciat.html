@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+
+<div id="elem" style="border: 2px solid black; padding: 10px;">
+  <p>Это ваш элемент!</p>
+</div>
+
+<button onclick="showElementWidth()">Показать ширину без границы</button>
+<button onclick="showElementHeight()">Показать высоту без границы</button>
+
+<script>
+  function showElementWidth() {
+    // Найти элемент #elem
+    var elem = document.getElementById('elem');
+
+    // Получить ширину элемента без границы, но с padding и вывести на экран
+    var elementWidthWithoutBorder = elem.clientWidth;
+    alert('Ширина элемента без границы, но с padding: ' + elementWidthWithoutBorder + 'px');
+  }
+
+  function showElementHeight() {
+    // Найти элемент #elem
+    var elem = document.getElementById('elem');
+
+    // Получить высоту элемента без границы, но с padding и вывести на экран
+    var elementHeightWithoutBorder = elem.clientHeight;
+    alert('Высота элемента без границы, но с padding: ' + elementHeightWithoutBorder + 'px');
+  }
+</script>
+
+</body>
+</html>

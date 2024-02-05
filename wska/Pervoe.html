@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+
+<div id="elem">Примерный элемент</div>
+
+<script>
+    // Добавление класса www к элементу #elem
+    document.querySelector('#elem').classList.add('www');
+
+    // Удаление класса www у элемента #elem
+    document.querySelector('#elem').classList.remove('www');
+
+    // Проверка наличия класса www у элемента #elem
+    var hasClass = document.querySelector('#elem').classList.contains('www');
+    console.log('Есть ли класс www:', hasClass);
+
+    // Добавление класса www, если его нет, и удаление, если есть
+    var elem = document.querySelector('#elem');
+    if (elem.classList.contains('www')) {
+        elem.classList.remove('www');
+    } else {
+        elem.classList.add('www');
+    }
+
+    // Узнание количества классов у элемента #elem
+    var numberOfClasses = document.querySelector('#elem').classList.length;
+    console.log('Количество классов:', numberOfClasses);
+
+    // Вывод последовательно алертом классов элемента #elem
+    var classes = document.querySelector('#elem').classList;
+    classes.forEach(function(className) {
+        alert(className);
+    });
+</script>
+
+</body>
+</html>

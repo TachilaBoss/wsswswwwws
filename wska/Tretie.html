@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #elem:hover {
+            color: red;
+            cursor: pointer;
+        }
+
+        .www:hover {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+    <title>Test</title>
+</head>
+<body>
+
+<div id="elem">Примерный элемент</div>
+
+<script>
+    document.querySelector('#elem').addEventListener('click', function() {
+        alert(this.tagName);
+    });
+</script>
+
+<!-- Задача 2: По клику на элемент #elem вывести название его тега в нижнем регистре -->
+<div id="elem2">Другой элемент</div>
+
+<script>
+    document.querySelector('#elem2').addEventListener('click', function() {
+        alert(this.tagName.toLowerCase());
+    });
+</script>
+
+<!-- Задача 3: Добавление названия тега в нижнем регистре к элементам с классом www -->
+<div class="www">Элемент с классом www</div>
+<div class="www">Еще один элемент с классом www</div>
+
+<script>
+    var elementsWithClass = document.querySelectorAll('.www');
+    elementsWithClass.forEach(function(element) {
+        var tagName = element.tagName.toLowerCase();
+        element.textContent += ' ' + tagName;
+    });
+</script>
+
+</body>
+</html>

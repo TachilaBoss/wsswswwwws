@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+    .red-bg {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div id="elem">
+  <p>Это ваш элемент!</p>
+</div>
+
+<script>
+  // Найти элемент #elem
+  var elem = document.getElementById('elem');
+
+  // Покрасить его родителя в красный цвет
+  elem.parentElement.classList.add('red-bg');
+
+  // Найти родителя его родителя
+  var grandparent = elem.parentElement.parentNode;
+
+  // Покрасить его родителя в красный цвет
+  grandparent.classList.add('red-bg');
+</script>
+
+</body>
+</html>
